@@ -1,0 +1,37 @@
+def function(str):
+	dec={}
+	for ch in str:
+		dec[ch]=dec.get(ch,0)+1
+	return dec
+var="asdjkfhuurywtejjjjjjflppppaaaaaayyeyuehnchd"
+dec1=function(var);
+print var
+print dec1
+
+
+def funcSort(str):
+	keys=str.keys()	
+	touple=[]
+	for ch in str:
+		touple.append((str[ch],ch))
+	touple.sort()
+	return touple
+
+
+touple1=funcSort(dec1)
+
+print touple1
+
+
+def TreeBuild(touples):
+	
+	while len(touples) > 1:
+		leastTwo=tuple(touples[0:2])
+		theRest=touples[2:]
+		combFreq=leastTwo[0][0] + leastTwo[1][0]
+		touples=theRest+[(theRest,combFreq)]
+		touples.sort()
+	return touples[0]
+
+print TreeBuild(touple1)
+
